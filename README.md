@@ -2,5 +2,5 @@
 
 Festa OpenSource 2023
 
-* [Demo](./demo)
-* [Presentació](https://FOS2023.github.io)
+* [Demo source code](./demo)
+* [Presentació](https://ctrl-alt-d.github.io/FOS2023/)
