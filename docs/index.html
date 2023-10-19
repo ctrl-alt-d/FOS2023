@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Blazor poet's arena</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+				<script type="text/template">
+					## Blazor Poet's Arena
+
+					![Presentació Blazor a la Festa OpenSource](./images/s0-hola.png)
+					
+					Octubre '2023  <!-- .element style="font-size:50%;" -->
+					dani herrera ctrl.alt.d@gmail.com
+
+					--
+
+					## Clown Computer
+
+					>Aplicació Blazor multiusuari amb integració ChatGPT
+
+					![Sembla que chatGPT sap identificar si una frase rima o no rima](./images/s0-rima.png)
+					
+					---
+
+					## Blazor? Qui és Blazor?
+
+					>Entorn gratuït i de codi obert pel desenvolupament web que permet fer aplicacions web usant C# i HTML. Microsoft.
+
+					![Logo de Blazor](./images/s1-logo.png) <!-- .element height="400px" -->
+
+					--
+
+					## Blazor? Qui és Blazor?
+
+					![Blazor vs others. Número d'upvotes a stackoverflow. Blazor en té menys 30Mil i react 1Milió](./images/s1-blazorvs.png)
+
+					--
+
+					## Blazor?
+
+					- Webassembly
+					- Blazor server
+
+					---
+
+					## Integració ChatGPT
+
+					![La cosa es complica una mica](./images/s2-draw.jpg) <!-- .element height="400px" -->
+
+					---
+
+					Gràcies!
+
+					dani herrera
+					@ctrl_alt_d
+
+                    </script>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>

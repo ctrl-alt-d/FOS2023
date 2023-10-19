@@ -1,0 +1,62 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>@NameService.GetName()</h1>
+
+<EditForm Model="@newRima" OnValidSubmit="@AddRima">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group mb-2">
+        <label for="text">Text</label>
+        <InputText id="text" class="form-control" @bind-Value="newRima.Text" />
+    </div>
+    <button type="submit" disabled=@Disabled class="btn btn-primary">Add</button>
+</EditForm>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Puntuació</th>
+            <th>Rima</th>
+            <th>Valoració</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var rima in RimaService.OrderByDescending(r => r.Valoracio))
+        {
+            <tr>
+                <td>[@rima.Rate]</td>
+                <td><em>@rima.Text (@rima.Author)</em></td>
+                <td>@rima.Valoracio</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Inject] private NameService NameService { get; set; } = default!;
+    [Inject] private RimaService RimaService { get; set; } = default!;
+
+    private bool Disabled = false;
+    private Rima newRima = new Rima();
+
+    public async Task AddRima()
+    {
+        Disabled = true;
+        await Task.Delay(1);
+        newRima.Author = NameService.GetName();
+        await RimaService.AddRimaAsync(newRima);
+        newRima = new Rima();
+        Disabled = false;
+    }
+
+    // override on initialized to load the data
+    protected override async Task OnInitializedAsync()
+    {
+        RimaService.CollectionChanged += (sender, args) => InvokeAsync(StateHasChanged);
+        await Task.CompletedTask;
+    }
+
+}
